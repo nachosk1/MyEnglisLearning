@@ -1,0 +1,29 @@
+@use 'base/root' as r;
+
+html{
+    font-size: 62,5%;
+    box-sizing: border-box; 
+}
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+body{
+    font-family: r.$font_primary;
+    background-color: r.$white;
+    margin: 0;
+}
+h1{
+    font-size: 2.5rem;
+    font-family: r.$font_title;
+}
+h2{
+    font-size: 1.8rem;
+}
+h3{
+    font-size: 1.4rem;
+}
+p{
+    font-family: r.$font_primary;
+}

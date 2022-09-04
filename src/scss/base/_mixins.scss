@@ -1,0 +1,31 @@
+@use 'base/root' as r;
+
+@mixin telefono {
+    @media(min-width: r.$telefono){
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: r.$tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: r.$desktop) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: r.$desktopXL) {
+        @content;
+    }
+}
+
+@mixin grid($columnas, $espaciado){
+    display: grid;
+    grid-template-columns: repeat($columnas, 1fr);
+    gap: $espaciado;
+}

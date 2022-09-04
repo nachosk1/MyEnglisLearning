@@ -1,0 +1,47 @@
+@use 'base/root' as r;
+
+.container-nav{
+    height: 100vh;
+    
+    .container-header{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        //background-color: r.$red;
+        align-items: center;
+        
+        h1{
+            margin: 1rem 0;
+            margin-left: 2rem;
+        }
+        
+    }
+    
+}
+.button-siging{
+    display: flex;
+    justify-content: right;
+    
+    button{
+        display: block;
+        font-size: 1.8rem;
+        width: 10rem;
+        font-family: r.$font_primary;
+        font-weight: bold;
+        background-color: transparent;
+        margin-right: 2rem;
+        border: 2px solid r.$black;
+        cursor: pointer;
+        position: relative;
+
+        &:hover:after{
+            content: "";
+            width: 10rem;
+            height: 2.8rem;
+            background-color: blue;
+            position: absolute;
+            right: 10rem;
+            top: 0;
+        }
+        
+    }
+}
