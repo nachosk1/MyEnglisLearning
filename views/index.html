@@ -12,12 +12,45 @@
     <link rel="stylesheet" href="../build/css/app.css">
 </head>
 <body>
-    <section class="container-nav">
-        <div class="container-header">
-            <h1>My English Learning</h1>
-            <div class="button-siging">
-                <button type="button">Sign in</button>
+    <div class="container-login">
+        <section class="container-nav">
+            <div class="container-header">
+                <h1>My English Learning</h1>
+                <div class="button-siging">
+                    <button type="button">
+                        <span>Sign in</span>
+                    </button>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    
+        <section class="container">
+            <h3>Log into My English Learning</h3>
+            <form action="">
+                <div class="container_input">
+                    <input class="input-login" id="email"  type="text" name="" placeholder=" " autocomplete="off" required/>
+                    <label class="label-login" for="email">Email or Username</label>
+                    <span>*Campo obligatorio</span> 
+                </div> 
+                <div class="container_input">
+                    <input class="input-login" id="pass"  type="password" name="" placeholder=" " autocomplete="off" required/>
+                    <label class="label-login" for="pass">Password</label>
+                    <span>*Campo obligatorio</span> 
+                </div> 
+                <button type="submit" name="">
+                    Log In
+                </button>
+                <button type="submit">
+                    Forgot account?
+                </button>
+            </form>
+    
+        </section>
+        <footer class="footer-login">
+            <h3>@nachoCompany 2022. Todos los derechos reservados</h3>
+        </footer>
+    </div>
+    
+
+    <script src="../build/js/app.js"></script>
 </body>

@@ -1,47 +1,166 @@
 @use 'base/root' as r;
+@use 'base/mixins' as m;
 
-.container-nav{
-    height: 100vh;
-    
-    .container-header{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        //background-color: r.$red;
-        align-items: center;
-        
-        h1{
-            margin: 1rem 0;
-            margin-left: 2rem;
-        }
-        
-    }
-    
-}
-.button-siging{
+
+.container-login{
+    min-height: 100vh;
     display: flex;
-    justify-content: right;
+    flex-direction: column;
+    justify-content: space-between;
     
-    button{
-        display: block;
-        font-size: 1.8rem;
-        width: 10rem;
-        font-family: r.$font_primary;
-        font-weight: bold;
-        background-color: transparent;
-        margin-right: 2rem;
+    .container-nav{
+        background-color: r.$red;
+        .container-header{
+            display: grid;
+            grid-template-columns: 1fr 0fr;
+            align-items: center;
+            gap: 1rem;
+            
+            h1{
+                margin: 1rem 0;
+                margin-left: 2rem;
+                @include m.tablet{
+                    font-size: 1.8rem;
+                }
+            }
+            
+        }
+        .button-siging{
+            display: flex;
+            justify-content: right;
+            margin-right: 2rem;
+            button{
+                display: block;
+                font-size: 1.8rem;
+                width: 10rem;
+                font-family: r.$font_primary;
+                font-weight: bold;
+                background-color: transparent;
+                border: 2px solid r.$black;
+                cursor: pointer;
+                position: relative;
+                overflow: hidden;
+                
+                @include m.tablet{
+                    font-size: 1.5rem;
+                    width: 5rem;
+                }
+                span{
+                    position: relative;
+                    z-index: 2; 
+                }
+        
+                &:after{
+                    content: "";
+                    width: 10rem; 
+                    position: absolute;
+                    z-index: 1;
+                    top: 0;
+                    background-color: r.$white;
+                    left: calc(-100% - 84px);
+                    transition: .5s ease-in-out all;
+                    height: 10rem;
+                }
+                &:hover:after{
+                    left: 0;
+                }
+            }
+        }
+    }
+    
+    .container{
+        margin: 1rem auto 0 auto;
+        width: 30rem;
         border: 2px solid r.$black;
-        cursor: pointer;
-        position: relative;
-
-        &:hover:after{
-            content: "";
-            width: 10rem;
-            height: 2.8rem;
-            background-color: blue;
-            position: absolute;
-            right: 10rem;
-            top: 0;
+        border-radius: .5rem;
+    
+        @include m.tablet{
+            width: 25rem;
+        }
+        @include m.phone{
+            width: 95%;
+            margin: 2rem auto 0 auto;
+        }
+        h3{
+            text-align: center;
+        }
+        form{
+            margin: 0 auto;
+            width: 90%;
+            .container_input{
+                position: relative;
+                margin: 1rem 0;
+                .label-login{
+                    position: absolute;
+                    left: 1rem;
+                    top:  1rem;
+                    transition: all 0.2s;
+                    padding: 0 .2rem;
+                    z-index: 1;
+                    color: black;
+                    
+            
+                    &::before{
+                        content: "";
+                        height: .5rem;
+                        background-color: r.$white;
+                        position: absolute;
+                        left: 0;
+                        top: 1rem;
+                        width: 100%;
+                        z-index: -1;
+                    }
+                }
+                .input-login{
+                    padding: .8rem;
+                    width: 100%;
+                    border: 2px solid #2f2c45;
+                    border-radius: .5rem;
+                    font-size: 1.3rem;
+                    outline: none;
+                    transition: all .3s;
+                    color: black;
+                    background-color: r.$white;
+            
+                    &:focus{
+                        border: 3px solid;
+                    }
+                    &::placeholder{
+                        font-size: 1.6rem;
+                        opacity: 0;
+                        transition: all .3s;
+                    }
+                    &:focus::placeholder{
+                        opacity: 1;
+                    }
+                }
+                
+                .input-login:focus + .label-login, .filled{
+                    top: -1rem;
+                    font-size: 1.2rem;
+                }
+                span{
+                    color: r.$red;
+                    font-weight: bold;
+                }
+            }
+            button{
+                background-color: red;
+                margin: 0 auto 1rem auto;
+                padding: .5rem;
+                width: 100%;
+                font-weight: bold;
+                font-size: 1.4rem;
+                cursor: pointer;
+                border-radius: .5rem;
+            }
         }
         
     }
+    .footer-login{
+        text-align: center;
+    }
 }
+
+
+

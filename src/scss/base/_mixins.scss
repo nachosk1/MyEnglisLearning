@@ -1,25 +1,25 @@
 @use 'base/root' as r;
 
-@mixin telefono {
-    @media(min-width: r.$telefono){
+@mixin phone {
+    @media(max-width: r.$phone){
         @content;
     }
 }
 
 @mixin tablet {
-    @media (min-width: r.$tablet) {
+    @media (max-width: r.$tablet) {
         @content;
     }
 }
 
 @mixin desktop {
-    @media (min-width: r.$desktop) {
+    @media (max-width: r.$desktop) {
         @content;
     }
 }
 
 @mixin desktop {
-    @media (min-width: r.$desktopXL) {
+    @media (max-width: r.$desktopXL) {
         @content;
     }
 }
