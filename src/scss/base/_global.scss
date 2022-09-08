@@ -13,6 +13,10 @@ body{
     font-family: r.$font_primary;
     background-color: r.$white;
     margin: 0;
+
+    &.fijar-body{
+        overflow: hidden;
+    }
 }
 h1{
     font-size: 2.5rem;

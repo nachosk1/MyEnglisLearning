@@ -41,6 +41,7 @@
                 position: relative;
                 overflow: hidden;
                 
+
                 @include m.tablet{
                     font-size: 1.5rem;
                     width: 5rem;
@@ -69,7 +70,7 @@
     }
     
     .container{
-        margin: 1rem auto 0 auto;
+        margin: 0 auto;
         width: 30rem;
         border: 2px solid r.$black;
         border-radius: .5rem;
@@ -162,5 +163,169 @@
     }
 }
 
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
 
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    place-items: center;      //centra vertical y horizontalmente
+    z-index: 3;
+    background-color: rgba(0, 0, 0, .5);
+    
+    .container{
+        margin: 0 auto;
+        width: 40rem;
+        border: 2px solid r.$black;
+        border-radius: .5rem;
+        background-color: r.$white;
+        
+        label{
+            margin-left: 2rem;
+        }
+    
+        @include m.tablet{
+            width: 25rem;
+        }
+        @include m.phone{
+            width: 95%;
+            margin: 2rem auto 0 auto;
+        }
+        h3{
+            text-align: center;
+        }
+        .container_input{
+            position: relative;
+            margin: 1rem 2rem;
+
+            .label-login{
+                position: absolute;
+                left: 1rem;
+                top:  1rem;
+                transition: all 0.2s;
+                z-index: 1;
+                color: black;
+                margin: 0;
+                font-size: 1rem;
+        
+                &::before{
+                    content: "";
+                    height: .5rem;
+                    background-color: r.$white;
+                    position: absolute;
+                    left: 0;
+                    top: 1rem;
+                    width: 100%;
+                    z-index: -1;
+                }
+            }
+            .input-login{
+                padding: .8rem;
+                width: 100%;
+                border: 2px solid #2f2c45;
+                border-radius: .5rem;
+                font-size: 1.3rem;
+                outline: none;
+                transition: all .3s;
+                color: black;
+                background-color: r.$white;
+        
+                &:focus{
+                    border: 3px solid;
+                }
+                &::placeholder{
+                    font-size: 1.6rem;
+                    opacity: 0;
+                    transition: all .3s;
+                }
+                &:focus::placeholder{
+                    opacity: 1;
+                }
+            }
+            
+            .input-login:focus + .label-login, .filled{
+                top: -1rem;
+                font-size: 1.2rem;
+            }
+            span{
+                color: r.$red;
+            }
+        }
+        button{
+            background-color: red;
+            width: 100%;
+            padding: .5rem;
+            font-weight: bold;
+            font-size: 1.4rem;
+            cursor: pointer;
+            border-radius: .5rem;
+        }
+        .decorate-span{
+            span{
+                position: absolute;
+                font-weight: bold;
+                background-color: r.$white;
+                padding: 0 .5rem;
+                left: 50%;
+                margin: -.8rem 0 0 -1rem;
+            }
+            hr{
+                border: 1px solid red;
+                width: 90%;
+            }
+        }
+        .container-social{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1rem auto;
+            width: 90%;
+            
+            
+            .contain-google{
+                border-radius: .5rem;
+                border: 2px solid r.$red;
+                display: grid;
+                
+            
+                .pic-google{
+                    background-color: r.$red;
+                }
+            }
+            .contain-instagram, .contain-google {
+                border-radius: .5rem;
+                border: 2px solid r.$red;
+                display: grid;
+                grid-template-columns: .5fr 2fr;
+                justify-content: center;   
+                cursor: pointer;
+
+                .pic-instagram , .pic-google{
+                    background-color: r.$red;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    padding: .5rem;
+                    img{
+                        width: 1.5rem;
+                        height: 1.5rem;
+                    }
+                    
+                }
+                span {
+                    text-align: center;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+            }
+        }
+        
+    }
+}
 
