@@ -78,7 +78,6 @@ function ShowModal(){
         </form>
         `;
 
-
         const body = document.querySelector("body");
 
         const overlay = document.createElement("div");

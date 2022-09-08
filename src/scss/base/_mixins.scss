@@ -23,9 +23,65 @@
         @content;
     }
 }
-
-@mixin grid($columnas, $espaciado){
+//grid
+@mixin grid($column, $espaciado){
     display: grid;
-    grid-template-columns: repeat($columnas, 1fr);
+    grid-template-columns: repeat($column, 1fr);
     gap: $espaciado;
+}
+@mixin gridOther($column, $columnTw, $espaciado){
+    display: grid;
+    grid-template-columns: $column $columnTw;
+    gap: $espaciado;
+}
+//flex-center
+@mixin flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+//login
+@mixin container-login($width) {
+    margin: 0 auto;
+    width: $width;
+    border: 2px solid r.$black;
+    border-radius: .5rem;
+}
+@mixin label-login($top) {
+    position: absolute;
+    left: 1rem;
+    top:  $top;
+    transition: all 0.2s;
+    z-index: 1;
+    color: r.$black;
+}
+@mixin before {
+    content: "";
+    height: .5rem;
+    background-color: r.$white;
+    position: absolute;
+    left: 0;
+    top: 1rem;
+    width: 100%;
+    z-index: -1;
+}
+@mixin input-login {
+    padding: .8rem;
+    width: 100%;
+    border: 2px solid r.$black;
+    border-radius: .5rem;
+    font-size: 1.3rem;
+    outline: none;
+    transition: all .3s;
+    color: r.$black;
+    background-color: r.$white;
+}
+@mixin button-login {
+    background-color: r.$red;
+    width: 100%;
+    padding: .5rem;
+    font-weight: bold;
+    font-size: 1.4rem;
+    cursor: pointer;
+    border-radius: .5rem;
 }
